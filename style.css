@@ -1,0 +1,62 @@
+body {
+	font-family: Helvetica Neue, Arial, sans-serif;
+	font-size: 14px;
+	color: #444;
+}
+
+table {
+	border: 2px solid #42b983;
+	border-radius: 3px;
+	background-color: #fff;
+}
+
+td {
+	background-color: #f9f9f9;
+}
+
+th,
+td {
+	min-width: 120px;
+	padding: 10px 20px;
+}
+
+button {
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	transition-duration: 0.5s;
+	cursor: pointer;
+	border-radius: 12px;
+}
+
+.greenbutton {
+	background-color: white;
+	color: black;
+	border: 2px solid #4CAF50;
+}
+
+.greenbutton:hover {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.redbutton {
+	background-color: white;
+	color: black;
+	border: 2px solid #f44336;
+}
+
+.redbutton:hover {
+	background-color: #f44336;
+	color: white;
+}
+
+.cell-input {
+	max-width: 100%;
+	width: 120px;
+}

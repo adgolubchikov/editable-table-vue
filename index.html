@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Data table</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="https://unpkg.com/vue@next"></script>
+		<script type="text/x-template" id="table-template">
+			<table>
+				<tbody>
+					<tr v-for="(row, rowIndex) in table">
+						<td v-for="(cell, cellIndex) in row" v-on:click="edit(rowIndex, cellIndex)">
+							<span v-bind:id="'cell-'+rowIndex+'-'+cellIndex" v-show="true">{{ cell }}</span>
+							<input type="number" class="cell-input" v-bind:id="'input-'+rowIndex+'-'+cellIndex" v-model="cell" v-show="false" v-on:blur="save(rowIndex, cellIndex, cell)" v-on:keyup.enter="save(rowIndex, cellIndex, cell)" />
+						</td>
+						<td>
+							{{ average(rowIndex) }}
+						</td>
+					</tr>
+					<tr>
+						<td v-for="(cell, cellIndex) in table[0]">
+							{{ sum(cellIndex) }}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			<button v-on:click="addRow" class="greenbutton">Add row</button>
+			<button v-on:click="removeRow" class="redbutton">Remove row</button>
+			<button v-on:click="addColumn" class="greenbutton">Add column</button>
+			<button v-on:click="removeColumn" class="redbutton">Remove column</button>
+			<editable-table :table="data">
+			</editable-table>
+		</div>
+		<script src="app.js"></script>
+	</body>
+</html>
