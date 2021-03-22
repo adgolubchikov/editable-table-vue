@@ -15,13 +15,13 @@ const app = Vue.createApp({
 			this.$data.data.push(Array(this.$data.data[0].length).fill(null));
 		},
 		removeRow: function () {
-			if (this.$data.data.length > 0) this.$data.data.splice(this.$data.data.length - 1, 1);
+			if (this.$data.data.length > 1) this.$data.data.splice(this.$data.data.length - 1, 1);
 		},
 		addColumn: function () {
 			this.$data.data.forEach(row => row.push(null));
 		},
 		removeColumn: function () {
-			if (this.$data.data[0].length > 0) this.$data.data.forEach(row => row.splice(row.length - 1, 1));
+			if (this.$data.data[0].length > 1) this.$data.data.forEach(row => row.splice(row.length - 1, 1));
 		}
 	}
 });
